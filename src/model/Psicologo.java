@@ -1,38 +1,41 @@
 package model;
 
-public class Psicologo {
+public class Psicologo extends Usuario {
 
-    private String nombre;
     private String especialidad;
     private String enfoque;
+    private int aniosExperiencia;
 
+     //Constructor Vacío
     public Psicologo() {
     }
 
-    public Psicologo(String nombre, String especialidad, String enfoque) {
-        this.nombre = nombre;
+    //Constructor Sobrecargado
+    public Psicologo(String nombre, int edad, String documento,
+                     String especialidad, String enfoque, int aniosExperiencia) {
+        super(nombre, edad, documento);
         this.especialidad = especialidad;
         this.enfoque = enfoque;
+        this.aniosExperiencia = aniosExperiencia;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        if(!nombre.isEmpty()){
-            this.nombre = nombre;
-        }
-    }
+    //Método de sobrescritura
+ @Override
+public void mostrarDatos() {
+    System.out.println("Psicólogo: " + getNombre() +
+            " | Edad: " + getEdad() +
+            " | Documento: " + getDocumento() +
+            " | Especialidad: " + especialidad +
+            " | Enfoque: " + enfoque +
+            " | Experiencia: " + aniosExperiencia + " años");
+}
 
     public String getEspecialidad() {
         return especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
-        if(!especialidad.isEmpty()){
-            this.especialidad = especialidad;
-        }
+        this.especialidad = especialidad;
     }
 
     public String getEnfoque() {
@@ -40,10 +43,14 @@ public class Psicologo {
     }
 
     public void setEnfoque(String enfoque) {
-        if(!enfoque.isEmpty()){
-            this.enfoque = enfoque;
-        }
+        this.enfoque = enfoque;
     }
 
+    public int getAniosExperiencia() {
+        return aniosExperiencia;
+    }
 
+    public void setAniosExperiencia(int aniosExperiencia) {
+        this.aniosExperiencia = aniosExperiencia;
+    }
 }

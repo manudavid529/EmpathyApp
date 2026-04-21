@@ -1,28 +1,29 @@
 package model;
-// Clase TestCompatibilidad
+
 public class TestCompatibilidad {
-// Atributos
-    private String nombrePaciente;
+
+    private Paciente paciente;
     private String necesidadPrincipal;
     private String estiloPreferido;
-// Constructor vacio
-    public TestCompatibilidad() {
-    }
-// Constructor sobrecagrado
-    public TestCompatibilidad(String nombrePaciente, String necesidadPrincipal, String estiloPreferido) {
-        this.nombrePaciente = nombrePaciente;
+
+    public TestCompatibilidad(Paciente paciente, String necesidadPrincipal, String estiloPreferido) {
+        this.paciente = paciente;
         this.necesidadPrincipal = necesidadPrincipal;
         this.estiloPreferido = estiloPreferido;
     }
 
-    public String getNombrePaciente() {
-        return nombrePaciente;
+    public void mostrarTest() {
+        System.out.println("Paciente: " + paciente.getNombre() +
+                " | Necesidad: " + necesidadPrincipal +
+                " | Estilo: " + estiloPreferido);
     }
 
-    public void setNombrePaciente(String nombrePaciente) {
-        if(!nombrePaciente.isEmpty()){
-            this.nombrePaciente = nombrePaciente;
-        }
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
     }
 
     public String getNecesidadPrincipal() {
@@ -30,9 +31,7 @@ public class TestCompatibilidad {
     }
 
     public void setNecesidadPrincipal(String necesidadPrincipal) {
-        if(!necesidadPrincipal.isEmpty()){
-            this.necesidadPrincipal = necesidadPrincipal;
-        }
+        this.necesidadPrincipal = necesidadPrincipal;
     }
 
     public String getEstiloPreferido() {
@@ -40,10 +39,8 @@ public class TestCompatibilidad {
     }
 
     public void setEstiloPreferido(String estiloPreferido) {
-        if(!estiloPreferido.isEmpty()){
-            this.estiloPreferido = estiloPreferido;
-        }
+        this.estiloPreferido = estiloPreferido;
     }
 
-
+   
 }
